@@ -24,9 +24,11 @@
   </div>
   <div class="title-wrapper">
     <div class="container">
-      <img src="/assets/images/logo.png" class="pull-left logo" alt="The Will Will Web">
+      <img src="/assets/images/logo.png" class="pull-left logo"
+           [title]="sitename"
+           (click)="changeName($event)">
       <div class="pull-left">
-        <h1><a href="http://blog.miniasp.com/">The Will Will Web</a></h1>
+        <h1><a href="http://blog.miniasp.com/">{{sitename}}</a></h1>
         <h3>記載著 Will 在網路世界的學習心得與技術分享</h3>
       </div>
       <div id="social-icons" class="pull-right social-icon">
