@@ -77,4 +77,8 @@ export class AppComponent {
     console.log('Search: ', value);
     this.keyword = value;
   }
+
+  doDelete(articleId: number) {
+    console.log("Deleting ", articleId);
+  }
 }

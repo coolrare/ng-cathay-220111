@@ -9,6 +9,8 @@
            href="http://blog.miniasp.com/author/will.aspx">{{item.author}}</a></span>
       <span class="post-category"><i class="glyphicon glyphicon-folder-close"></i><a
            [href]="item['category-link']">{{item.category}}</a></span>
+
+      <button (click)="btnDelete()">刪除文章</button>
     </div>
   </header>
   <section class="post-body text" [innerHTML]="item.summary">

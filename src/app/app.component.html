@@ -10,7 +10,7 @@
         <!-- <pre>{{ data | json }}</pre> -->
 
         <!-- Article START-->
-        <app-article [item]="item" *ngFor="let item of data"></app-article>
+        <app-article *ngFor="let item of data" [item]="item" (delete)="doDelete($event)"></app-article>
         <!-- Article END-->
       </div>
     </section>
