@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   sitename = 'Hello World';
+  counter = 0;
 
   constructor() { }
 
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
   }
 
   changeName(event: MouseEvent) {
+    this.counter++;
     console.log(event);
     if (event.ctrlKey) {
       this.sitename = 'The Will Will Web';
