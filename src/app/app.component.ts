@@ -2,6 +2,7 @@ import { Article } from './article/shared/Article';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,14 +14,12 @@ export class AppComponent implements OnInit {
   keyword = '123';
   title = 'ng-cathay-220111';
 
-  data: Article[] = [];
+  data$: Observable<Article[]> = of([]);
 
   constructor(private datasvc: DataService) {}
 
   ngOnInit(): void {
-    this.datasvc.loadArticle().subscribe(items => {
-      this.data = items;
-    })
+    this.data$ = this.datasvc.loadArticle();
   }
 
   doSearch(value: string) {
